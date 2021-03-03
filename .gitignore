@@ -1,0 +1,43 @@
+# Ignore tags
+tags
+
+# Ignore CSV files and JSON files and logs
+*.csv
+*.json
+*.log
+logs/
+*.out
+
+# Ignore swp and pyc files
+*.pyc
+*.swp
+*.swo
+*.py~
+# Ignore spider output
+spider_output/
+
+# Ignore data files
+data_files/
+*.xls
+*.ods
+postcode_mappings*/
+*.zip
+dump/ 
+
+# Ignore pid files
+*.pid
+
+# Ignore scrapyd-deploy directories
+build/
+dbs/
+eggs/
+project.egg-info/
+dist/
+licensed_HMO_Scraper.egg-info/
+.scrapy/
+
+# Supervisor files
+supervisor*
+
+# pycharm specific folder
+.idea/

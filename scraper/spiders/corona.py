@@ -1,5 +1,7 @@
 import scrapy
 from scrapy.selector import Selector
+from scraper.items import ScraperItem
+
 
 class CoronaSpider(scrapy.Spider):
     name = 'corona'
@@ -7,11 +9,8 @@ class CoronaSpider(scrapy.Spider):
     start_urls = ['https://www.worldometers.info/coronavirus']
 
     def parse(self, response):
-
+        data = ScraperItem()
         for country in response.xpath("//td/a[@class='mt_a']"):
-            url = country.xpath(".//@href").get()
-            county_name = country.xpath(".//text()").get()
-            yield {
-                "country_name":county_name,
-                "country_link": url
-            }
+            data['country_name'] = country.xpath(".//text()").get()
+            data['country_link'] = country.xpath(".//@href").get()
+            yield data

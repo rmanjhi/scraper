@@ -9,4 +9,6 @@ import scrapy
 class ScraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    country_name = scrapy.Field()
+    country_link = scrapy.Field()
     pass
